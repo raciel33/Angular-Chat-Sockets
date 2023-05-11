@@ -23,7 +23,9 @@ export class ChatComponent implements OnInit, OnDestroy{
 
    ngOnInit(): void {
 
+    //cojemos este elemento
     this.elemento = document.getElementById('chat-mensajes')
+
 
     this.mensajesSubscription = this.chatService.getMessage().subscribe( msg => {
 
