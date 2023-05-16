@@ -1,1 +1,11 @@
-<p>lista-usuarios works!</p>
+<h1>Usuarios</h1>
+
+<hr>
+<ul class="list-group">
+    <li class="list-group-item " *ngFor="let item of usuariosActivosObs | async">
+        {{item.nombre}}
+        <span class="badge bg-primary">{{item.sala}}</span><br>
+        <span class="badge bg-info">{{item.id}}</span>
+        <button class="btn btn-outline-primary" (click)="msgPrivate( item.id )">Mensaje privado</button>
+    </li>
+</ul>

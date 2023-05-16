@@ -18,6 +18,13 @@ footer {
     overflow: scroll;
 }
 
+#chat-mensajes-privados {
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
 .chat-input {
     margin-top: 10px;
 }

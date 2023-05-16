@@ -18,6 +18,20 @@ export class ChatService {
 
     this.wsService.emit('mensaje', payload)
 
+
+
+  }
+  sendMessagePrivate( mensaje:string, id:string  ){
+
+    const payload = {
+      id:id,
+      de: this.wsService.getUsuario().nombre,
+      cuerpo: mensaje
+    };
+
+    this.wsService.emit('msgPrivate', payload)
+
+
   }
 
   getMessage(){
@@ -29,6 +43,18 @@ export class ChatService {
 //mensajes privados
   getMessagesPrivate(){
 
-    return this.wsService.listen('mensaje-privado');
+    return this.wsService.listen('msgPrivate');
+  }
+
+  //usuarios activos
+  getUsuariosActivos(){
+
+    return this.wsService.listen('usuarios-activos');
+  }
+
+  //emitir usuarios Activos
+  emitirUsuariosActivos(){
+
+    return this.wsService.emit('obtener-usuarios');
   }
 }
